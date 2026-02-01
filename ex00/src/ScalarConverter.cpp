@@ -43,6 +43,11 @@ void printNaN(void)
 
 void ScalarConverter::convert(const std::string& input)
 {
+	if (input.length() == 1 && !std::isdigit(input[0]))
+	{
+		std::cout << RED << "Invalid char size of one" << RESET << std::endl;
+		return ;
+	}
     if (input == "nan" || input == "nanf" || input == "+inf" || input == "+inff" || input == "-inf" || input == "-inff")
     {
         printNaN();
@@ -55,21 +60,21 @@ void ScalarConverter::convert(const std::string& input)
 
 
     // char
-    if(valueChar < 32 || valueChar > 126)
+    if (valueChar < 32 || valueChar > 126)
         std::cout << BOLD << "char: " << RESET << "Non displayable" << std::endl;
     else
         std::cout << BOLD << "char: " << RESET << "'" << valueChar << "'" << std::endl;
 
 	//int
-	if(valueDouble > static_cast<double>(INT32_MAX) || valueDouble < static_cast<double>(INT32_MIN))
+	if (valueDouble > static_cast<double>(INT32_MAX) || valueDouble < static_cast<double>(INT32_MIN))
 		std::cout << BOLD << "int: " << RESET << "impossible" << std::endl;
 	else
 		std::cout << BOLD << "int: " << RESET << valueInt << std::endl;
 	
 	//float
-	std::cout << BOLD << "float: " << RESET << valueFloat << "f" << std::endl;
+	std::cout << BOLD << "float: " << RESET << std::fixed << std::setprecision(1) << valueFloat << "f" << std::endl;
 
 	//double
-	std::cout << BOLD << "double: " << RESET << valueDouble << std::endl;
+	std::cout << BOLD << "double: " << RESET << std::fixed << std::setprecision(1) << valueDouble << std::endl;
 	
 }

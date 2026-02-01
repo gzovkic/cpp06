@@ -1,4 +1,4 @@
-NAME = bureaucrat
+NAME = convert
 CPP = c++
 RM = rm -rf
 
@@ -17,7 +17,7 @@ vpath %.cpp $(SRC_DIRS)
 ###############                  SOURCE FILES                     ##############
 ################################################################################
 
-SRCS := main.cpp Bureaucrat.cpp
+SRCS := main.cpp ScalarConverter.cpp
 OBJS := $(addprefix $(OBJ_DIR)/, $(SRCS:%.cpp=%.o))
 
 ################################################################################

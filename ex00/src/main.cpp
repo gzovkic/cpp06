@@ -1,26 +1,14 @@
-#include "Bureaucrat.hpp"
+#include "ScalarConverter.hpp"
 
-int main()
+int main(int argc, char *argv[])
 {
-	Bureaucrat b1("bob", 150);
-	try
+	if (argc == 2)
 	{
-		std::cout	<< BOLD << b1.getName() << RESET << ", has Grade " << GREEN << b1.getGrade() << RESET << " before Increment" 
-					<< std::endl;
-		b1.IncrementGrade();
-		std::cout	<< BOLD << b1.getName() << RESET << ", has Grade " << GREEN << b1.getGrade() << RESET << " after Increment"
-					<< std::endl;
-		b1.DecrementGrade();
-		std::cout	<< BOLD << b1.getName() << RESET << ", has Grade " << GREEN << b1.getGrade() << RESET << " after Decrement"
-					<< std::endl;
-		b1.DecrementGrade();
-		std::cout	<< BOLD << b1.getName() << RESET << ", has Grade " << GREEN << b1.getGrade() << RESET << " after Decrement"
-					<< std::endl;
+		converter(argv[1]);
+		return(0);
 	}
-	catch (std::exception &e)
-	{
-		std::cerr	<< RED << e.what() 
-					<< RESET << std::endl;
-	}
-	return (0);
+	std::cerr	<< RED << "Wrong amount of arguments!\n"
+				<< "example ./convert <number>"
+				<< RESET << std::endl;
+	return (-1);
 }

@@ -19,20 +19,6 @@ ScalarConverter::ScalarConverter(const ScalarConverter& other)
     *this = other;
 }
 
-void    checkChar(std::string input)
-{
-    int charValue;
-
-    charValue = std::atoi(input.c_str());
-    if(charValue > 0 && charValue < 127)
-    {
-        if(std::isprint(charValue))
-        {
-
-        }
-    }
-}
-
 void printNaN(void)
 {
     std::cout << "char: impossible" << std::endl;

@@ -1,4 +1,4 @@
-NAME = serializer
+NAME = identify
 CPP = c++
 RM = rm -rf
 
@@ -17,7 +17,7 @@ vpath %.cpp $(SRC_DIRS)
 ###############                  SOURCE FILES                     ##############
 ################################################################################
 
-SRCS := main.cpp Base.cpp main.cpp
+SRCS := main.cpp Base.cpp
 OBJS := $(addprefix $(OBJ_DIR)/, $(SRCS:%.cpp=%.o))
 
 ################################################################################

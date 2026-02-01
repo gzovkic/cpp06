@@ -12,5 +12,3 @@ class ScalarConverter
 		
 		static void convert(const std::string& input);
 };
-
-void converter(char *argv);

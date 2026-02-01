@@ -19,12 +19,7 @@ ScalarConverter::ScalarConverter(const ScalarConverter& other)
     *this = other;
 }
 
-// void convert(const std::string& input)
-// {
-    
-// }
-
-void converter(char *argv)
+void ScalarConverter::convert(const std::string& input)
 {
-    std::cout << argv << std::endl;
+    std::cout << input << std::endl;
 }

@@ -28,9 +28,13 @@ void    printValue(char c, int i, float f, double d)
         std::cout << "char: Non displayable" << std::endl;
 
     // int 
-    std::cout << "int: " << i << std::endl;
+    if(i > INT32_MAX || i < INT32_MIN)
+        std::cout << "int: " << "impossible" << std::endl;
+    else
+        std::cout << "int: " << i << std::endl;
 
     // float
+    // if(f > MAXFLOAT || f <)
     std::cout << "float: " << std::fixed << std::setprecision(1) << f << "f" << std::endl;
 
     // double
@@ -61,10 +65,7 @@ void ScalarConverter::convert(const std::string& input)
         printValue(static_cast<char>(d), static_cast<int>(d), static_cast<float>(d), d);
         return ;
     }
-
     int i = std::atoi(input.c_str());
         
     printValue(static_cast<char>(i), i, static_cast<float>(i), static_cast<double>(i));
-    return ;
-    
 }
